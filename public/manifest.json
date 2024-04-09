@@ -1,0 +1,34 @@
+{
+    "name": "Dynamic Web Technologies",
+    "short_name": "DWT",
+    "start_url": "./index.html",
+    "homepage": ".",
+    "orientation":"portrait",
+    "scope":"/",
+    "display": "standalone",
+    "theme_color": "#000000",
+    "background_color": "#ffffff",
+    "description": "A test Application for the module of Dynamic Web Technologies.",
+    
+    "icons": [
+    {
+    "src": "图标.svg",
+    "sizes": "560x559 560x559",
+    "type": "image/svg+xml",
+    "purpose": "any"
+    },
+    {
+        "src": "photo.png",
+        "sizes": "260x260 260x260",
+        "type": "image/png",
+        "purpose": "any"
+    },
+    {
+        "src": "photo1.png",
+        "sizes": "620x620 620x620",
+        "type": "image/png",
+        "purpose": "maskable"
+    }       
+    ]
+
+   }
