@@ -24,11 +24,22 @@ async function addPhoto(id, imgSrc) { // 保存照片，id将作为prop传递
         </>
         );
        }
+
        function GetPhotoSrc(id) {
         console.log("getPhotoSrc", id);
-        const img = useLiveQuery(() => db.photos.where("id").equals(id).toArray());
-        console.table(img);
-        if (Array.isArray(img)) return img[0].imgSrc; //返回图像数据字符串
-       } // 通过id识别。   修改加分
+        try {
+          const img = useLiveQuery(() => db.photos.where("id").equals(id).toArray());
+          console.table(img);
+          if (Array.isArray(img) && img.length > 0) {
+            return img[0].imgSrc;
+          } else {
+            console.log("No photo found for id:", id);
+            return null; // 返回默认值
+          }
+        } catch (error) {
+          console.error("Error fetching photo:", error);
+          return null; // 返回默认值
+        }
+      }
 
        export { addPhoto, GetPhotoSrc };
